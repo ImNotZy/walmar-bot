@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "discord.js": "^14.14.1",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7",
+    "svg-captcha": "^1.4.0"
+  }
+}
