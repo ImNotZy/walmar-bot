@@ -1,31 +1,32 @@
 const Squelize = require ('sequelize');
 
 const sequelize = new Squelize('database', 'user', 'password', {
-    dialect: 'sqlite',
-    host: 'localhost',
+  dialect: 'sqlite',
+  host: 'localhost',
 
-    storage: 'database.sqlite',
-    logging: false,
+  storage: 'database.sqlite',
+  logging: false,
 });
 
 const Employee = sequelize.define('employee', {
-    name: Squelize.STRING,
-    userID: Squelize.INTEGER,
-    position: Squelize.STRING,
-    tasksCompleted: Squelize.INTEGER,
-    tasksFailed: Squelize.INTEGER
+  name: Squelize.STRING,
+  userID: Squelize.INTEGER,
+  position: Squelize.STRING,
+  tasksCompleted: Squelize.INTEGER,
+  tasksFailed: Squelize.INTEGER
 }, {
-    tableName: 'employees'
+  tableName: 'employees'
 });
 
 const Server = sequelize.define('server', {
-    leaderboardMsgID: Squelize.INTEGER
+  userID: Squelize.INTEGER,
+  isTimeUp: Squelize.BOOLEAN
 }, {
-    tableName: 'serverSettings'
+  tableName: 'serverSettings'
 });
 
 module.exports = {
-    sequelize,
-    Employee,
-    Server
+  sequelize,
+  Employee,
+  Server
 }
